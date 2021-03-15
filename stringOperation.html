@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="string.css">
+</head>
+<body>
+ <div class="container"> 
+  
+            <label > Enter a name :</label>  
+            <span><input type="text" id="name"></span>
+
+            <p><input type="submit" id="Submit" value="Result" ></p>
+        <div class="label">
+            <p id="reverse">Reverse</p>
+
+            <p id="lastLetterIscapital">first last capital</p>
+
+            <label >length :</label> 
+            <span id="length">length</span>
+        </div>
+    
+</div>
+</body>
+<script >
+
+    $(document).ready(function(){
+        $('#Submit').click(function(){
+           var name=$("#name").val();
+           var reverse=name.split("").reverse().join("");
+           $("#reverse").text(reverse);
+           var length= name.length;
+           var lastletter= name.substr(0,length-1).toLowerCase()+name.substr(length-1).toUpperCase() ; 
+            $("#lastLetterIscapital").text(lastletter);
+            
+            $("#length").text(length);
+
+        });
+
+    });
+</script>
+
+</html>
